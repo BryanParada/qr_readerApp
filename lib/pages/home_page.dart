@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:qr_reader/pages/directions_page.dart';
 import 'package:qr_reader/pages/maps_page.dart';
 import 'package:qr_reader/providers/db_provider.dart';
+import 'package:qr_reader/providers/scan_list_provider.dart';
 import 'package:qr_reader/providers/ui_provider.dart';
 import 'package:qr_reader/widgets/custom_navigatorbar.dart';
 import 'package:qr_reader/widgets/scan_button.dart';
@@ -53,12 +54,17 @@ class _HomePageBody extends StatelessWidget {
     //DBProvider.db.getAllScan().then(print);
     //DBProvider.db.deleteAllScans().then(print);
 
+    //Usar el ScanListProvider
+    final scanListProvider = Provider.of<ScanListProvider>(context, listen: false); //que no seredibuje
+
     switch( currentIndex ){
 
       case 0:
+        scanListProvider.loadScansByType('geo');
         return MapsPage();
       
       case 1:
+      scanListProvider.loadScansByType('http');
         return DirectionsPage();
         
       default:
