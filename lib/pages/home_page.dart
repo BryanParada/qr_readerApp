@@ -50,7 +50,8 @@ class _HomePageBody extends StatelessWidget {
     //DBProvider.db.newScan(tempScan); 
     //LEE
     //DBProvider.db.getScanById(1).then((scan) => print(scan!.value));
-    DBProvider.db.getAllScan().then(print);
+    //DBProvider.db.getAllScan().then(print);
+    //DBProvider.db.deleteAllScans().then(print);
 
     switch( currentIndex ){
 
