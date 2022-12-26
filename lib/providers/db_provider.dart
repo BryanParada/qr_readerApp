@@ -102,7 +102,7 @@ class DBProvider {
 
   }
 
-   Future<List<ScanModel>?> getAllScan( ) async {
+   Future<List<ScanModel>> getAllScan( ) async {
 
     final db  = await database;
     final res = await db.query('Scans');
@@ -113,7 +113,7 @@ class DBProvider {
 
   }
 
-   Future<List<ScanModel>?> getScansByType( String type ) async {
+   Future<List<ScanModel>> getScansByType( String type ) async {
 
     final db  = await database;
     final res = await db.rawQuery('''
