@@ -86,7 +86,7 @@ class DBProvider {
 
     final db = await database;
     final res = await db.insert('Scans', newScan.toJson());
-    print(res);
+    //Es el id del ultimo registro insertado
     return res;
 
   }
