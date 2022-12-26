@@ -4,29 +4,29 @@
 
 import 'dart:convert';
 
-TrailerReponse trailerReponseFromJson(String str) => TrailerReponse.fromJson(json.decode(str));
+ScanModel trailerReponseFromJson(String str) => ScanModel.fromJson(json.decode(str));
 
-String trailerReponseToJson(TrailerReponse data) => json.encode(data.toJson());
+String trailerReponseToJson(ScanModel data) => json.encode(data.toJson());
 
-class TrailerReponse {
-    TrailerReponse({
-        required this.id,
-        required this.type,
+class ScanModel {
+    ScanModel({
+        this.id,
+        this.type,
         required this.value,
     }) {
 
-      if (this.type.contains('http')){
+      if (this.value.contains('http')){
         this.type = 'http';
       }else{
         this.type = 'geo';
       }
     }
 
-    int id;
-    String type;
+    int? id;
+    String? type;
     String value;
 
-    factory TrailerReponse.fromJson(Map<String, dynamic> json) => TrailerReponse(
+    factory ScanModel.fromJson(Map<String, dynamic> json) => ScanModel(
         id: json["id"],
         type: json["type"],
         value: json["value"],
