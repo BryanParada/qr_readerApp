@@ -19,7 +19,13 @@ class HomePage extends StatelessWidget {
         title: Text('History'),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+             
+              Provider.of<ScanListProvider>(context, listen: false).deleteAll();
+
+
+
+            },
             icon: Icon(Icons.delete_forever)
              )
         ]
