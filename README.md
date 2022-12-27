@@ -1,6 +1,25 @@
 # qr_reader
 
-A new Flutter project.
+A Flutter app made for reading QR Codes. 
+ 
+<img src="https://user-images.githubusercontent.com/51382458/209707449-9783d921-e81e-4c61-bcdf-c3ebc8dcd8a2.png" width="300" /> 
+<img src="https://user-images.githubusercontent.com/51382458/209707500-2a4c23fd-1146-44ec-a5c1-640ee61d0742.png" width="300" /> 
+<img src="https://user-images.githubusercontent.com/51382458/209707675-4d1699f9-a5f8-49df-9e23-dca03cf4e047.png" width="300" /> 
+
+## Features 
+- Read QR Codes
+- Open sites and maps stored in bookmarks 
+
+## What did i use in this app? 
+
+- Launch the camera and read a QR code
+- Store it in SQLite
+- CRUD to SQLite - Internal storage
+- use of maps
+- Google Maps
+- Markers
+- Open URLs
+- Provider as state manager 
 
 ## Getting Started
 
