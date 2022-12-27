@@ -37,6 +37,22 @@ class _MapPageState extends State<MapPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Map'),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.location_disabled),
+            onPressed: () async{
+              final GoogleMapController controller = await _controller.future;
+              controller.animateCamera(CameraUpdate.newCameraPosition(
+                CameraPosition(
+                  target: scan.getLatLng(),
+                  zoom: 14.4746,
+                  tilt: 50
+                  )
+              ));
+            },
+            
+            )
+        ],
       ),
       body: GoogleMap(
         mapType: MapType.normal,
@@ -46,6 +62,14 @@ class _MapPageState extends State<MapPage> {
           _controller.complete(controller);
         },
       ),
+      floatingActionButton: FloatingActionButton( 
+        
+        child: Icon( Icons.layers),
+        onPressed: (){
+        
+        },
+      ), 
+      floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
     );
   }
 }
