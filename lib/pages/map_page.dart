@@ -26,6 +26,13 @@ class _MapPageState extends State<MapPage> {
       tilt: 50
     );
 
+    // Marcadores
+    Set<Marker> markers = new Set<Marker>();
+    markers.add(new Marker(
+      markerId: MarkerId('geo-location'),
+      position: scan.getLatLng(),
+    ));
+
 
     return Scaffold(
       appBar: AppBar(
@@ -33,6 +40,7 @@ class _MapPageState extends State<MapPage> {
       ),
       body: GoogleMap(
         mapType: MapType.normal,
+        markers: markers,
         initialCameraPosition: initialPoint,
         onMapCreated: (GoogleMapController controller) {
           _controller.complete(controller);
